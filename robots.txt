@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /private/
 Allow: /
 
-Sitemap: https://zaminweb.uz/sitemap.xml
+https://zamindev.vercel.app/sitemap.xml
