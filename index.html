@@ -1,457 +1,514 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZaminWeb</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZaminWeb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- Header -->
-<header class="bg-white shadow-md fixed w-full top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Лого -->
-    <h1 class="text-2xl font-bold text-gray-900">ZaminWeb</h1>
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Лого -->
+            <h1 class="text-2xl font-bold text-gray-900">ZaminWeb</h1>
 
-    <!-- Десктоп меню -->
-    <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
-      <a href="#mobileMenu" class="hover:text-gray-900 transition">Главная</a>
-      <a href="#advantages" class="hover:text-gray-900 transition">Преимущества</a>
-      <a href="#pricing" class="hover:text-gray-900 transition">Цены</a>
-      <a href="#faq" class="hover:text-gray-900 transition">FAQ</a>
-      <a href="#contact" class="hover:text-gray-900 transition">Контакты</a>
-    </nav>
+            <!-- Десктоп меню -->
+            <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+                <a href="#mobileMenu" class="hover:text-gray-900 transition">Главная</a>
+                <a href="#advantages" class="hover:text-gray-900 transition">Преимущества</a>
+                <a href="#pricing" class="hover:text-gray-900 transition">Цены</a>
+                <a href="#faq" class="hover:text-gray-900 transition">FAQ</a>
+                <a href="#contact" class="hover:text-gray-900 transition">Контакты</a>
+            </nav>
 
-    <!-- Языки -->
-    <div class="hidden md:block">
-      <select id="languageSelect" class="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none">
-        <option value="ru">Русский</option>
-        <option value="en">English</option>
-        <option value="uz">O‘zbek</option>
-      </select>
-    </div>
+            <!-- Языки -->
+            <div class="hidden md:block">
+                <select id="languageSelect" class="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="uz">O‘zbek</option>
+                </select>
+            </div>
 
-    <!-- Бургер (мобилка) -->
-    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
-      ☰
-    </button>
-  </div>
-
-  <!-- Мобильное меню -->
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-md">
-    <nav class="flex flex-col space-y-4 p-4 text-gray-700 font-medium">
-      <a href="#hero" class="hover:text-gray-900 transition">Главная</a>
-      <a href="#advantages" class="hover:text-gray-900 transition">Преимущества</a>
-      <a href="#pricing" class="hover:text-gray-900 transition">Цены</a>
-      <a href="#faq" class="hover:text-gray-900 transition">FAQ</a>
-      <a href="#contact" class="hover:text-gray-900 transition">Контакты</a>
-      <select id="languageSelectMobile" class="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none">
-        <option value="ru">Русский</option>
-        <option value="en">English</option>
-        <option value="uz">O‘zbek</option>
-      </select>
-    </nav>
-  </div>
-</header>
-
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
-
-
-  <main class="">
-
-    <!-- Hero -->
-<section class="relative text-center py-48 md:py-60 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white overflow-hidden">
-  <!-- Декоративные элементы -->
-  <div class="absolute -top-32 -left-32 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-
-  <div class="relative z-10">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 opacity-0 translate-y-[-30px] animate-fadeSlideDown">
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">ZaminWeb</span>
-    </h1>
-    <h2 id="heroTitle" class="text-2xl md:text-3xl font-semibold mb-6 opacity-0 animate-fadeIn delay-300">
-      Профессиональная разработка сайтов
-    </h2>
-    <p id="heroSubtitle" class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto opacity-0 animate-fadeIn delay-500">
-      Создаём сайты, которые продают и развивают ваш бизнес
-    </p>
-<a href="#pricing" id="btnPrices" 
-   class="inline-block bg-white text-gray-900 font-semibold px-8 py-4 rounded-2xl shadow-xl transform scale-95 opacity-0 animate-buttonPop delay-700">
-   <p id="adv44Text">Посмотреть ценны</p>
-</a>
-
-  </div>
-</section>
-
-<!-- Добавляем кастомные анимации -->
-<style>
-@keyframes fadeSlideDown {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes buttonPop {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.animate-fadeSlideDown {
-  animation: fadeSlideDown 1s ease forwards;
-}
-.animate-fadeIn {
-  animation: fadeIn 1s ease forwards;
-}
-.animate-buttonPop {
-  animation: buttonPop 0.8s ease forwards;
-}
-.delay-300 { animation-delay: 0.3s; }
-.delay-500 { animation-delay: 0.5s; }
-.delay-700 { animation-delay: 0.7s; }
-</style>
-
-
-    <!-- Advantages -->
-<section class="max-w-7xl mx-auto px-6 py-16" id="advantages">
-  <h3 class="text-3xl font-bold text-center mb-12" id="advTitle">Наши преимущества</h3>
-  <div class="grid md:grid-cols-3 gap-8">
-    
-    <!-- Скорость -->
-    <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-2xl transition duration-300">
-      <h4 class="text-xl font-semibold mb-3" id="adv1Title">Скорость</h4>
-      <p id="adv1Text" class="text-gray-600 leading-relaxed">
-        Мы ценим ваше время и понимаем, насколько важно быстро запустить проект.  
-        Используя современные фреймворки и оптимизированные процессы, мы создаём сайты в максимально короткие сроки, 
-        при этом не теряя в качестве.  
-        Ваш бизнес получает результат уже в первые недели.
-      </p>
-    </div>
-
-    <!-- Качество -->
-    <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-2xl transition duration-300">
-      <h4 class="text-xl font-semibold mb-3" id="adv2Title">Качество</h4>
-      <p id="adv2Text" class="text-gray-600 leading-relaxed">
-        Каждый сайт мы делаем адаптивным и современным, чтобы он одинаково отлично смотрелся на телефонах, 
-        планшетах и компьютерах.  
-        Мы используем только проверенные технологии и уделяем внимание каждой детали, 
-        чтобы вы получили удобный, быстрый и красивый продукт, который работает на результат.
-      </p>
-    </div>
-
-    <!-- Поддержка -->
-    <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-2xl transition duration-300">
-      <h4 class="text-xl font-semibold mb-3" id="adv3Title">Поддержка</h4>
-      <p id="adv3Text" class="text-gray-600 leading-relaxed">
-        После запуска сайта мы не оставляем вас одних — наша команда всегда рядом.  
-        Мы поможем внести изменения, обновить контент, подключить новые функции и дадим консультации по продвижению.  
-        С нами ваш сайт будет развиваться вместе с вашим бизнесом и приносить результат долгие годы.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- Pricing -->
-<section class="bg-gray-100 py-16" id="pricing">
-  <h3 class="text-3xl font-bold text-center mb-12" id="priceTitle">Тарифы</h3>
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
-    
-    <!-- План 1 -->
-    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-      <h4 id="plan1" class="text-xl font-semibold mb-4">Старт</h4>
-      <p class="text-3xl font-bold mb-4">$100</p>
-      <p id="plan1Desc" class="mb-6 text-gray-600">Простой сайт-визитка для старта бизнеса или личного бренда</p>
-      <ul class="text-gray-700 text-sm space-y-2 mb-6 text-left">
-        <li>✅ Дизайн на готовом шаблоне</li>
-        <li>✅ До 3 страниц (главная, контакты, услуги)</li>
-        <li>✅ Адаптивность для мобильных</li>
-        <li>✅ Базовая SEO-настройка</li>
-        <li>✅ Подключение домена и хостинга</li>
-      </ul>
-      <button class="bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">Заказать</button>
-    </div>
-    
-    <!-- План 2 -->
-    <div class="bg-white rounded-xl shadow-lg p-6 text-center border-2 border-gray-900">
-      <h4 id="plan2" class="text-xl font-semibold mb-4">Бизнес</h4>
-      <p class="text-3xl font-bold mb-4">$300</p>
-      <p id="plan2Desc" class="mb-6 text-gray-600">Оптимальное решение для компаний и организаций</p>
-      <ul class="text-gray-700 text-sm space-y-2 mb-6 text-left">
-        <li>🚀 Индивидуальный дизайн</li>
-        <li>🚀 До 8 страниц (главная, услуги, портфолио и др.)</li>
-        <li>🚀 Полная адаптивность для всех устройств</li>
-        <li>🚀 Расширенная SEO-оптимизация</li>
-        <li>🚀 Подключение аналитики (Google, Яндекс)</li>
-        <li>🚀 Техническая поддержка 1 месяц</li>
-      </ul>
-      <button class="bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">Заказать</button>
-    </div>
-    
-    <!-- План 3 -->
-    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-      <h4 id="plan3" class="text-xl font-semibold mb-4">Премиум</h4>
-      <p class="text-3xl font-bold mb-4">$500</p>
-      <p id="plan3Desc" class="mb-6 text-gray-600">Полноценный интернет-магазин с системой управления</p>
-      <ul class="text-gray-700 text-sm space-y-2 mb-6 text-left">
-        <li>🌟 Уникальный дизайн под ваш бренд</li>
-        <li>🌟 Каталог товаров с фильтрацией</li>
-        <li>🌟 Система онлайн-оплаты и корзина</li>
-        <li>🌟 Личный кабинет пользователя</li>
-        <li>🌟 SEO + интеграция с соцсетями</li>
-        <li>🌟 Админ-панель для управления</li>
-        <li>🌟 Поддержка 3 месяца</li>
-      </ul>
-      <button class="bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">Заказать</button>
-    </div>
-
-  </div>
-</section>
-
-    <!-- FAQ -->
-
-
-  </main>
-
-<section id="consultation" class="bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    
-    <!-- Левая часть: мотивация -->
-    <div class="space-y-6">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-        Бесплатная консультация и заказ
-      </h2>
-      <p class="text-gray-600 text-lg leading-relaxed">
-        Хотите современный сайт для вашего бизнеса?  
-        Оставьте заявку и получите бесплатную консультацию от специалистов <span class="font-bold text-indigo-600">ZaminWeb</span>.
-      </p>
-      <ul class="space-y-3 text-gray-700">
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
-          Быстрый запуск сайта
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
-          Индивидуальный дизайн
-        </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
-          Поддержка 24/7
-        </li>
-      </ul>
-    </div>
-
-    <!-- Правая часть: форма -->
-    <div class="bg-white shadow-2xl rounded-2xl p-8">
-      <form class="space-y-5">
-        <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Имя</label>
-          <input id="name" type="text" placeholder="Ваше имя" 
-                 class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-        </div>
-        
-        <div>
-          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
-          <input id="phone" type="tel" placeholder="+998 90 123 45 67" 
-                 class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+            <!-- Бургер (мобилка) -->
+            <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                ☰
+            </button>
         </div>
 
-        <div>
-          <label for="comment" class="block text-sm font-medium text-gray-700 mb-1">Комментарий</label>
-          <textarea id="comment" rows="3" placeholder="Опишите ваш проект..." 
-                    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"></textarea>
+        <!-- Мобильное меню -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-md">
+            <nav class="flex flex-col space-y-4 p-4 text-gray-700 font-medium">
+                <a href="#hero" class="hover:text-gray-900 transition">Главная</a>
+                <a href="#advantages" class="hover:text-gray-900 transition">Преимущества</a>
+                <a href="#pricing" class="hover:text-gray-900 transition">Цены</a>
+                <a href="#faq" class="hover:text-gray-900 transition">FAQ</a>
+                <a href="#contact" class="hover:text-gray-900 transition">Контакты</a>
+                <select id="languageSelectMobile"
+                    class="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="uz">O‘zbek</option>
+                </select>
+            </nav>
         </div>
+    </header>
 
-        <button type="submit" 
-                class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:bg-indigo-700 transition">
-          Отправить заявку
-        </button>
-      </form>
-    </div>
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
 
-  </div>
-</section>
-
-
-<section id="faq" class="max-w-5xl mx-auto px-6 py-20">
-  <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">❓ FAQ — Часто задаваемые вопросы</h3>
-  
-  <div class="space-y-4">
-    <!-- Вопрос 1 -->
-    <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
-      <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
-        <span id="faq1Q">⏳ Сколько времени занимает создание сайта?</span>
-        <span class="transition-transform group-open:rotate-180">⌄</span>
-      </summary>
-      <p id="faq1A" class="mt-3 text-gray-600">Обычно от 3 до 14 дней в зависимости от сложности проекта.</p>
-    </details>
-
-    <!-- Вопрос 2 -->
-    <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
-      <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
-        <span id="faq2Q">🔄 Можно ли вносить изменения после запуска?</span>
-        <span class="transition-transform group-open:rotate-180">⌄</span>
-      </summary>
-      <p id="faq2A" class="mt-3 text-gray-600">Да, мы предоставляем техническую поддержку и обновления.</p>
-    </details>
-
-    <!-- Вопрос 3 -->
-    <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
-      <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
-        <span id="faq3Q">🌐 Нужен ли домен и хостинг?</span>
-        <span class="transition-transform group-open:rotate-180">⌄</span>
-      </summary>
-      <p id="faq3A" class="mt-3 text-gray-600">Мы поможем подобрать и подключить домен и хостинг.</p>
-    </details>
-
-    <!-- Вопрос 4 -->
-    <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
-      <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
-        <span id="faq4Q">💳 Сколько стоит создание сайта?</span>
-        <span class="transition-transform group-open:rotate-180">⌄</span>
-      </summary>
-      <p id="faq4A" class="mt-3 text-gray-600">Стоимость зависит от типа сайта (визитка, корпоративный, интернет-магазин). Мы предложим несколько пакетов.</p>
-    </details>
-
-    <!-- Вопрос 5 -->
-    <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
-      <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
-        <span id="faq5Q">📱 Будет ли сайт адаптивным?</span>
-        <span class="transition-transform group-open:rotate-180">⌄</span>
-      </summary>
-      <p id="faq5A" class="mt-3 text-gray-600">Да, все сайты корректно отображаются на телефонах, планшетах и компьютерах.</p>
-    </details>
-
-    <!-- Вопрос 6 -->
-    <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
-      <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
-        <span id="faq6Q">🚀 Можно ли ускорить разработку?</span>
-        <span class="transition-transform group-open:rotate-180">⌄</span>
-      </summary>
-      <p id="faq6A" class="mt-3 text-gray-600">Да, при необходимости мы можем сделать сайт в течение 1–3 дней.</p>
-    </details>
-  </div>
-</section>
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
 
 
+    <main class="">
 
-  <!-- Footer -->
-<!-- Footer Navigation -->
-<footer class="bg-gray-900 text-gray-300 py-10">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <!-- Hero -->
+        <section
+            class="relative text-center py-48 md:py-60 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white overflow-hidden">
+            <!-- Декоративные элементы -->
+            <div class="absolute -top-32 -left-32 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 
-    <!-- Логотип / Название -->
-    <h2 class="text-xl font-bold text-white">ZaminWeb</h2>
+            <div class="relative z-10">
+                <h1
+                    class="text-5xl md:text-7xl font-extrabold mb-6 opacity-0 translate-y-[-30px] animate-fadeSlideDown">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">ZaminWeb</span>
+                </h1>
+                <h2 id="heroTitle" class="text-2xl md:text-3xl font-semibold mb-6 opacity-0 animate-fadeIn delay-300">
+                    Профессиональная разработка сайтов
+                </h2>
+                <p id="heroSubtitle"
+                    class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto opacity-0 animate-fadeIn delay-500">
+                    Создаём сайты, которые продают и развивают ваш бизнес
+                </p>
+                <a href="#pricing" id="btnPrices"
+                    class="inline-block bg-white text-gray-900 font-semibold px-8 py-4 rounded-2xl shadow-xl transform scale-95 opacity-0 animate-buttonPop delay-700">
+                    <p id="adv44Text">Посмотреть ценны</p>
+                </a>
 
-    <!-- Навигация -->
-    <nav class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 text-gray-300 text-sm">
-      <a href="#mobileMenu" class="hover:text-white transition">Главная</a>
-      <a href="#advantages" class="hover:text-white transition">Преимущества</a>
-      <a href="#pricing" class="hover:text-white transition">Цены</a>
-      <a href="#faq" class="hover:text-white transition">FAQ</a>
-      <a href="#contact" class="hover:text-white transition">Контакты</a>
-    </nav>
+            </div>
+        </section>
 
-    <!-- Соцсети -->
-    <div class="flex space-x-4">
-      <a href="https://t.me/yourusername" target="_blank" class="hover:text-white transition">
-<svg width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="white">
-  <title>Telegram icon</title>
-  <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
-</svg>
+        <!-- Добавляем кастомные анимации -->
+        <style>
+            @keyframes fadeSlideDown {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
 
-      </a>
-      <a href="https://instagram.com/yourusername" target="_blank" class="hover:text-white transition">
-<svg fill="white" width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><title>Instagram icon</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-      </a>
-      <a href="https://todo.com/yourusername" target="_blank" class="hover:text-white transition">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
-        </svg>
-      </a>
-    </div>
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-    <!-- Копирайт -->
-    <p class="text-gray-400 text-sm mt-4 md:mt-0">&copy; 2025 ZaminWeb. Все права защищены.</p>
-  </div>
-</footer>
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes buttonPop {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .animate-fadeSlideDown {
+                animation: fadeSlideDown 1s ease forwards;
+            }
+
+            .animate-fadeIn {
+                animation: fadeIn 1s ease forwards;
+            }
+
+            .animate-buttonPop {
+                animation: buttonPop 0.8s ease forwards;
+            }
+
+            .delay-300 {
+                animation-delay: 0.3s;
+            }
+
+            .delay-500 {
+                animation-delay: 0.5s;
+            }
+
+            .delay-700 {
+                animation-delay: 0.7s;
+            }
+        </style>
 
 
-  <!-- JS -->
-  <script>
-    const translations = {
-      ru: {
-        heroTitle: "Профессиональная разработка сайтов",
-        heroSubtitle: "Создаём сайты, которые продают и развивают ваш бизнес",
-        advTitle: "Наши преимущества",
-        adv1Title: "Скорость", adv1Text: "Быстрая разработка с использованием современных технологий",
-        adv2Title: "Качество", adv2Text: "Мы делаем адаптивные и современные сайты",
-        adv3Title: "Поддержка", adv3Text: "Всегда на связи и готовы помочь вашему бизнесу",
-        priceTitle: "Тарифы",
-        plan1: "Старт", plan1Desc: "Простой сайт-визитка",
-        plan2: "Бизнес", plan2Desc: "Корпоративный сайт",
-        plan3: "Премиум", plan3Desc: "Интернет-магазин",
-        faqTitle: "FAQ — Часто задаваемые вопросы",
-        faq1Q: "Сколько времени занимает создание сайта?", faq1A: "Обычно от 3 до 14 дней в зависимости от сложности проекта.",
-        faq2Q: "Можно ли вносить изменения после запуска?", faq2A: "Да, мы предоставляем техническую поддержку и обновления.",
-        faq3Q: "Нужен ли домен и хостинг?", faq3A: "Мы поможем подобрать и подключить домен и хостинг.",
-        adv44Text:"Посмотреть ценны"
-      },
-      en: {
-        heroTitle: "Professional Website Development",
-        heroSubtitle: "We create websites that sell and grow your business",
-        advTitle: "Our Advantages",
-        adv1Title: "Speed", adv1Text: "Fast development using modern technologies",
-        adv2Title: "Quality", adv2Text: "We build responsive and modern websites",
-        adv3Title: "Support", adv3Text: "Always in touch and ready to help your business",
-        priceTitle: "Pricing",
-        plan1: "Starter", plan1Desc: "Simple landing page",
-        plan2: "Business", plan2Desc: "Corporate website",
-        plan3: "Premium", plan3Desc: "E-commerce store",
-        faqTitle: "FAQ — Frequently Asked Questions",
-        faq1Q: "How long does it take to build a website?", faq1A: "Usually 3 to 14 days depending on project complexity.",
-        faq2Q: "Can I make changes after launch?", faq2A: "Yes, we provide technical support and updates.",
-        faq3Q: "Do I need domain and hosting?", faq3A: "We will help you choose and connect domain and hosting.",
-        adv44Text:"View prices"
-      },
-      uz: {
-        heroTitle: "Professional veb-sayt ishlab chiqish",
-        heroSubtitle: "Biz sizning biznesingizni rivojlantiradigan va sotadigan saytlar yaratamiz",
-        advTitle: "Bizning afzalliklarimiz",
-        adv1Title: "Tezlik", adv1Text: "Zamonaviy texnologiyalar yordamida tezkor ishlab chiqish",
-        adv2Title: "Sifat", adv2Text: "Biz moslashuvchan va zamonaviy saytlar qilamiz",
-        adv3Title: "Qo‘llab-quvvatlash", adv3Text: "Doimo aloqadamiz va biznesingizga yordam berishga tayyormiz",
-        priceTitle: "Tariflar",
-        plan1: "Start", plan1Desc: "Oddiy vizitka sayt",
-        plan2: "Biznes", plan2Desc: "Korporativ sayt",
-        plan3: "Premium", plan3Desc: "Internet-do‘kon",
-        faqTitle: "FAQ — Ko‘p beriladigan savollar",
-        faq1Q: "Sayt yaratish qancha vaqt oladi?", faq1A: "Odatda 3 kundan 14 kungacha, loyihaning murakkabligiga qarab.",
-        faq2Q: "Ishga keyin o‘zgartirish mumkinmi?", faq2A: "Ha, biz texnik yordam va yangilanishlarni taqdim etamiz.",
-        faq3Q: "Domen va hosting kerakmi?", faq3A: "Biz domen va hostingni tanlashda va ulashda yordam beramiz.",
-        adv44Text:"Narhlarni ko'rish"
-      }
-    };
+        <!-- Advantages -->
+        <section class="max-w-7xl mx-auto px-6 py-16" id="advantages">
+            <h3 class="text-3xl font-bold text-center mb-12" id="advTitle">Наши преимущества</h3>
+            <div class="grid md:grid-cols-3 gap-8">
 
-    const langSelect = document.getElementById("languageSelect");
-    langSelect.addEventListener("change", () => {
-      const lang = langSelect.value;
-      Object.keys(translations[lang]).forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = translations[lang][id];
-      });
-    });
-  </script>
+                <!-- Скорость -->
+                <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-2xl transition duration-300">
+                    <h4 class="text-xl font-semibold mb-3" id="adv1Title">Скорость</h4>
+                    <p id="adv1Text" class="text-gray-600 leading-relaxed">
+                        Мы ценим ваше время и понимаем, насколько важно быстро запустить проект.
+                        Используя современные фреймворки и оптимизированные процессы, мы создаём сайты в максимально
+                        короткие сроки,
+                        при этом не теряя в качестве.
+                        Ваш бизнес получает результат уже в первые недели.
+                    </p>
+                </div>
+
+                <!-- Качество -->
+                <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-2xl transition duration-300">
+                    <h4 class="text-xl font-semibold mb-3" id="adv2Title">Качество</h4>
+                    <p id="adv2Text" class="text-gray-600 leading-relaxed">
+                        Каждый сайт мы делаем адаптивным и современным, чтобы он одинаково отлично смотрелся на
+                        телефонах,
+                        планшетах и компьютерах.
+                        Мы используем только проверенные технологии и уделяем внимание каждой детали,
+                        чтобы вы получили удобный, быстрый и красивый продукт, который работает на результат.
+                    </p>
+                </div>
+
+                <!-- Поддержка -->
+                <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-2xl transition duration-300">
+                    <h4 class="text-xl font-semibold mb-3" id="adv3Title">Поддержка</h4>
+                    <p id="adv3Text" class="text-gray-600 leading-relaxed">
+                        После запуска сайта мы не оставляем вас одних — наша команда всегда рядом.
+                        Мы поможем внести изменения, обновить контент, подключить новые функции и дадим консультации по
+                        продвижению.
+                        С нами ваш сайт будет развиваться вместе с вашим бизнесом и приносить результат долгие годы.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Pricing -->
+        <section class="bg-gray-100 py-16" id="pricing">
+            <h3 class="text-3xl font-bold text-center mb-12" id="priceTitle">Тарифы</h3>
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+
+                <!-- План 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                    <h4 id="plan1" class="text-xl font-semibold mb-4">Старт</h4>
+                    <p class="text-3xl font-bold mb-4">$100</p>
+                    <p id="plan1Desc" class="mb-6 text-gray-600">Простой сайт-визитка для старта бизнеса или личного
+                        бренда</p>
+                    <ul class="text-gray-700 text-sm space-y-2 mb-6 text-left">
+                        <li>✅ Дизайн на готовом шаблоне</li>
+                        <li>✅ До 3 страниц (главная, контакты, услуги)</li>
+                        <li>✅ Адаптивность для мобильных</li>
+                        <li>✅ Базовая SEO-настройка</li>
+                        <li>✅ Подключение домена и хостинга</li>
+                    </ul>
+                    <button
+                        class="bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">Заказать</button>
+                </div>
+
+                <!-- План 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center border-2 border-gray-900">
+                    <h4 id="plan2" class="text-xl font-semibold mb-4">Бизнес</h4>
+                    <p class="text-3xl font-bold mb-4">$300</p>
+                    <p id="plan2Desc" class="mb-6 text-gray-600">Оптимальное решение для компаний и организаций</p>
+                    <ul class="text-gray-700 text-sm space-y-2 mb-6 text-left">
+                        <li>🚀 Индивидуальный дизайн</li>
+                        <li>🚀 До 8 страниц (главная, услуги, портфолио и др.)</li>
+                        <li>🚀 Полная адаптивность для всех устройств</li>
+                        <li>🚀 Расширенная SEO-оптимизация</li>
+                        <li>🚀 Подключение аналитики (Google, Яндекс)</li>
+                        <li>🚀 Техническая поддержка 1 месяц</li>
+                    </ul>
+                    <button
+                        class="bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">Заказать</button>
+                </div>
+
+                <!-- План 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                    <h4 id="plan3" class="text-xl font-semibold mb-4">Премиум</h4>
+                    <p class="text-3xl font-bold mb-4">$500</p>
+                    <p id="plan3Desc" class="mb-6 text-gray-600">Полноценный интернет-магазин с системой управления</p>
+                    <ul class="text-gray-700 text-sm space-y-2 mb-6 text-left">
+                        <li>🌟 Уникальный дизайн под ваш бренд</li>
+                        <li>🌟 Каталог товаров с фильтрацией</li>
+                        <li>🌟 Система онлайн-оплаты и корзина</li>
+                        <li>🌟 Личный кабинет пользователя</li>
+                        <li>🌟 SEO + интеграция с соцсетями</li>
+                        <li>🌟 Админ-панель для управления</li>
+                        <li>🌟 Поддержка 3 месяца</li>
+                    </ul>
+                    <button
+                        class="bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">Заказать</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ -->
+
+
+    </main>
+
+    <section id="consultation" class="bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            <!-- Левая часть: мотивация -->
+            <div class="space-y-6">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                    Бесплатная консультация и заказ
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Хотите современный сайт для вашего бизнеса?
+                    Оставьте заявку и получите бесплатную консультацию от специалистов <span
+                        class="font-bold text-indigo-600">ZaminWeb</span>.
+                </p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                        Быстрый запуск сайта
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                        Индивидуальный дизайн
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                        Поддержка 24/7
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Правая часть: форма -->
+            <div class="bg-white shadow-2xl rounded-2xl p-8">
+                <form class="space-y-5">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Имя</label>
+                        <input id="name" type="text" placeholder="Ваше имя"
+                            class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
+                        <input id="phone" type="tel" placeholder="+998 90 123 45 67"
+                            class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label for="comment" class="block text-sm font-medium text-gray-700 mb-1">Комментарий</label>
+                        <textarea id="comment" rows="3" placeholder="Опишите ваш проект..."
+                            class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:bg-indigo-700 transition">
+                        Отправить заявку
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
+        <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">❓ FAQ — Часто задаваемые вопросы</h3>
+
+        <div class="space-y-4">
+            <!-- Вопрос 1 -->
+            <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
+                <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+                    <span id="faq1Q">⏳ Сколько времени занимает создание сайта?</span>
+                    <span class="transition-transform group-open:rotate-180">⌄</span>
+                </summary>
+                <p id="faq1A" class="mt-3 text-gray-600">Обычно от 3 до 14 дней в зависимости от сложности проекта.</p>
+            </details>
+
+            <!-- Вопрос 2 -->
+            <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
+                <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+                    <span id="faq2Q">🔄 Можно ли вносить изменения после запуска?</span>
+                    <span class="transition-transform group-open:rotate-180">⌄</span>
+                </summary>
+                <p id="faq2A" class="mt-3 text-gray-600">Да, мы предоставляем техническую поддержку и обновления.</p>
+            </details>
+
+            <!-- Вопрос 3 -->
+            <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
+                <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+                    <span id="faq3Q">🌐 Нужен ли домен и хостинг?</span>
+                    <span class="transition-transform group-open:rotate-180">⌄</span>
+                </summary>
+                <p id="faq3A" class="mt-3 text-gray-600">Мы поможем подобрать и подключить домен и хостинг.</p>
+            </details>
+
+            <!-- Вопрос 4 -->
+            <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
+                <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+                    <span id="faq4Q">💳 Сколько стоит создание сайта?</span>
+                    <span class="transition-transform group-open:rotate-180">⌄</span>
+                </summary>
+                <p id="faq4A" class="mt-3 text-gray-600">Стоимость зависит от типа сайта (визитка, корпоративный,
+                    интернет-магазин). Мы предложим несколько пакетов.</p>
+            </details>
+
+            <!-- Вопрос 5 -->
+            <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
+                <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+                    <span id="faq5Q">📱 Будет ли сайт адаптивным?</span>
+                    <span class="transition-transform group-open:rotate-180">⌄</span>
+                </summary>
+                <p id="faq5A" class="mt-3 text-gray-600">Да, все сайты корректно отображаются на телефонах, планшетах и
+                    компьютерах.</p>
+            </details>
+
+            <!-- Вопрос 6 -->
+            <details class="group bg-white shadow-lg rounded-xl p-5 transition hover:shadow-xl">
+                <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+                    <span id="faq6Q">🚀 Можно ли ускорить разработку?</span>
+                    <span class="transition-transform group-open:rotate-180">⌄</span>
+                </summary>
+                <p id="faq6A" class="mt-3 text-gray-600">Да, при необходимости мы можем сделать сайт в течение 1–3 дней.
+                </p>
+            </details>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <!-- Footer Navigation -->
+    <footer class="bg-gray-900 text-gray-300 py-10">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+
+            <!-- Логотип / Название -->
+            <h2 class="text-xl font-bold text-white">ZaminWeb</h2>
+
+            <!-- Навигация -->
+            <nav class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 text-gray-300 text-sm">
+                <a href="#mobileMenu" class="hover:text-white transition">Главная</a>
+                <a href="#advantages" class="hover:text-white transition">Преимущества</a>
+                <a href="#pricing" class="hover:text-white transition">Цены</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+                <a href="#contact" class="hover:text-white transition">Контакты</a>
+            </nav>
+
+            <!-- Соцсети -->
+            <div class="flex space-x-4">
+                <a href="https://t.me/yourusername" target="_blank" class="hover:text-white transition">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"
+                        fill="white">
+                        <title>Telegram icon</title>
+                        <path
+                            d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z" />
+                    </svg>
+
+                </a>
+                <a href="https://instagram.com/yourusername" target="_blank" class="hover:text-white transition">
+                    <svg fill="white" width="24px" height="24px" viewBox="0 0 24 24" role="img"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram icon</title>
+                        <path
+                            d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                    </svg>
+                </a>
+                <a href="https://todo.com/yourusername" target="_blank" class="hover:text-white transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Копирайт -->
+            <p class="text-gray-400 text-sm mt-4 md:mt-0">&copy; 2025 ZaminWeb. Все права защищены.</p>
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <script>
+        const translations = {
+            ru: {
+                heroTitle: "Профессиональная разработка сайтов",
+                heroSubtitle: "Создаём сайты, которые продают и развивают ваш бизнес",
+                advTitle: "Наши преимущества",
+                adv1Title: "Скорость", adv1Text: "Быстрая разработка с использованием современных технологий",
+                adv2Title: "Качество", adv2Text: "Мы делаем адаптивные и современные сайты",
+                adv3Title: "Поддержка", adv3Text: "Всегда на связи и готовы помочь вашему бизнесу",
+                priceTitle: "Тарифы",
+                plan1: "Старт", plan1Desc: "Простой сайт-визитка",
+                plan2: "Бизнес", plan2Desc: "Корпоративный сайт",
+                plan3: "Премиум", plan3Desc: "Интернет-магазин",
+                faqTitle: "FAQ — Часто задаваемые вопросы",
+                faq1Q: "Сколько времени занимает создание сайта?", faq1A: "Обычно от 3 до 14 дней в зависимости от сложности проекта.",
+                faq2Q: "Можно ли вносить изменения после запуска?", faq2A: "Да, мы предоставляем техническую поддержку и обновления.",
+                faq3Q: "Нужен ли домен и хостинг?", faq3A: "Мы поможем подобрать и подключить домен и хостинг.",
+                adv44Text: "Посмотреть ценны"
+            },
+            en: {
+                heroTitle: "Professional Website Development",
+                heroSubtitle: "We create websites that sell and grow your business",
+                advTitle: "Our Advantages",
+                adv1Title: "Speed", adv1Text: "Fast development using modern technologies",
+                adv2Title: "Quality", adv2Text: "We build responsive and modern websites",
+                adv3Title: "Support", adv3Text: "Always in touch and ready to help your business",
+                priceTitle: "Pricing",
+                plan1: "Starter", plan1Desc: "Simple landing page",
+                plan2: "Business", plan2Desc: "Corporate website",
+                plan3: "Premium", plan3Desc: "E-commerce store",
+                faqTitle: "FAQ — Frequently Asked Questions",
+                faq1Q: "How long does it take to build a website?", faq1A: "Usually 3 to 14 days depending on project complexity.",
+                faq2Q: "Can I make changes after launch?", faq2A: "Yes, we provide technical support and updates.",
+                faq3Q: "Do I need domain and hosting?", faq3A: "We will help you choose and connect domain and hosting.",
+                adv44Text: "View prices"
+            },
+            uz: {
+                heroTitle: "Professional veb-sayt ishlab chiqish",
+                heroSubtitle: "Biz sizning biznesingizni rivojlantiradigan va sotadigan saytlar yaratamiz",
+                advTitle: "Bizning afzalliklarimiz",
+                adv1Title: "Tezlik", adv1Text: "Zamonaviy texnologiyalar yordamida tezkor ishlab chiqish",
+                adv2Title: "Sifat", adv2Text: "Biz moslashuvchan va zamonaviy saytlar qilamiz",
+                adv3Title: "Qo‘llab-quvvatlash", adv3Text: "Doimo aloqadamiz va biznesingizga yordam berishga tayyormiz",
+                priceTitle: "Tariflar",
+                plan1: "Start", plan1Desc: "Oddiy vizitka sayt",
+                plan2: "Biznes", plan2Desc: "Korporativ sayt",
+                plan3: "Premium", plan3Desc: "Internet-do‘kon",
+                faqTitle: "FAQ — Ko‘p beriladigan savollar",
+                faq1Q: "Sayt yaratish qancha vaqt oladi?", faq1A: "Odatda 3 kundan 14 kungacha, loyihaning murakkabligiga qarab.",
+                faq2Q: "Ishga keyin o‘zgartirish mumkinmi?", faq2A: "Ha, biz texnik yordam va yangilanishlarni taqdim etamiz.",
+                faq3Q: "Domen va hosting kerakmi?", faq3A: "Biz domen va hostingni tanlashda va ulashda yordam beramiz.",
+                adv44Text: "Narhlarni ko'rish"
+            }
+        };
+
+        const langSelect = document.getElementById("languageSelect");
+        langSelect.addEventListener("change", () => {
+            const lang = langSelect.value;
+            Object.keys(translations[lang]).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = translations[lang][id];
+            });
+        });
+    </script>
 </body>
+
 </html>
